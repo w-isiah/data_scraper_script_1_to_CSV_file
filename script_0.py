@@ -54,8 +54,6 @@ while count<=23:
 				price2 = p.get_text().strip()
 				price1=price2[1:]
 			all_items.append({"Item": title1,"Priceb($)": price1,"Rating": rating1,"Link": url_1})
-
-
 			keys = all_items[0].keys()
 
 			with open('data3.csv', 'w', newline='') as output_file:
