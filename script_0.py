@@ -63,7 +63,7 @@ while count<=23:
 
 			keys = all_products[0].keys()
 
-			with open('data4.csv', 'w', newline='') as output_file:
+			with open('data3.csv', 'w', newline='') as output_file:
 			    dict_writer = csv.DictWriter(output_file, keys)
 			    dict_writer.writeheader()
 			    dict_writer.writerows(all_products)
