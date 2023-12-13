@@ -11,7 +11,7 @@ headers = {
 url = 'https://www.walmart.com.mx/search?q=alimento+'
 count=1
 #Create top_items as empty list
-all_products = []
+all_items = []
 while count<=23:
 	count+=1
 	#error handling
@@ -53,20 +53,15 @@ while count<=23:
 			else:
 				price2 = p.get_text().strip()
 				price1=price2[1:]
-			all_products.append({
-	        "Item": title1,
-	        "Priceb($)": price1,
-	        "Rating": rating1,
-	        "Link": url_1
-			    })
+			all_items.append({"Item": title1,"Priceb($)": price1,"Rating": rating1,"Link": url_1})
 
 
-			keys = all_products[0].keys()
+			keys = all_items[0].keys()
 
 			with open('data3.csv', 'w', newline='') as output_file:
 			    dict_writer = csv.DictWriter(output_file, keys)
 			    dict_writer.writeheader()
-			    dict_writer.writerows(all_products)
+			    dict_writer.writerows(all_items)
 			print(count)
 	
 	url=f"https://www.walmart.com.mx/search?q=alimento+para+perro+o+alimento+p%2Fperro&page={count}"
